@@ -260,6 +260,13 @@ export class Chat extends React.Component<ChatProps, {}> {
         konsole.log("BotChat.Chat state", state);
 
         // only render real stuff after we know our dimensions
+        let header: JSX.Element;
+        header =
+            <div className="wc-header">
+                <p className="wc-header-span">Your Free Credit Report worth Rs.1200<br/><strong>Instant and Absolutely FREE!</strong></p>
+                <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-svg.svg" onClick={() => window.parent.postMessage('close-bot', '*')}/>
+            </div>;
+
         return (
             <Provider store={ this.store }>
                 <div
@@ -268,10 +275,7 @@ export class Chat extends React.Component<ChatProps, {}> {
                     ref={ this._saveChatviewPanelRef }
                 >
                     {
-                        !!state.format.chatTitle &&
-                            <div className="wc-header">
-                                <span>{ typeof state.format.chatTitle === 'string' ? state.format.chatTitle : state.format.strings.title }</span>
-                            </div>
+                        header
                     }
                     <MessagePane>
                         <History

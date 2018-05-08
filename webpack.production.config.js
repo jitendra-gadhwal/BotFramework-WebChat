@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const webpackDevConfig = require('./webpack.config');
 
-module.exports = webpackDevConfig.map(config => ({
-    ...config,
-    plugins: [
+module.exports = webpackDevConfig.map(config => {
+    var updatedConfig = Object.assign({}, config)
+    updatedConfig.plugins = [
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
@@ -17,4 +17,5 @@ module.exports = webpackDevConfig.map(config => ({
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
     ]
-}));
+    return updatedConfig;
+});
