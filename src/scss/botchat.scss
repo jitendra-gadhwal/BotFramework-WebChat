@@ -43,39 +43,134 @@
         top: 0px;
         cursor: pointer;
     }
+.wc-credit-meter {
+    position: relative;
+    padding: 2%;
+    max-width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
 
-    .wc-header-span {
-        float: left;
-        font-weight: 400;
+.wc-header-span {
+    float: left;
+    font-weight: 400;
+}
+
+.wc-header {
+    background-color: #286efa;
+    box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    box-sizing: content-box;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    height: 120px;
+    left: 0;
+    letter-spacing: 0.5px;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    line-height: 24px;
+}
+
+@media (max-width: 400px) {
+    .wc-credit-meter {
+        max-width: 180px;
     }
-
     .wc-header {
-        background-color: $c_brand;
-        box-shadow: 0 1px $c_shadow;
-        box-sizing: content-box;
-        color: $c01;
-        font-weight: 700;
-        font-size: 16px;
-        height: 40px;
-        left: 0;
-        letter-spacing: 0.5px;
-        padding: 15px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 1;
-        line-height: 24px;
+        height: 120px;
     }
+    .wc-header {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .wc-close-chat {
+        height: 14px;
+    }
+}
 
-    @media (max-width: 320px) {
-        .wc-header {
-            font-size: 14px;
-            line-height: 20px;
-        }
-        .wc-close-chat {
-            height: 14px;
-        }
+@media (min-width: 401px) and (max-width: 450px) {
+    .wc-credit-meter {
+        max-width: 250px;
     }
+    .wc-header {
+        height: 160px;
+    }
+    .wc-header {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .wc-close-chat {
+        height: 18px;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 500px) {
+    .wc-credit-meter {
+        max-width: 250px;
+    }
+    .wc-header {
+        height: 170px;
+    }
+    .wc-header {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .wc-close-chat {
+        height: 18px;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 550px) {
+    .wc-credit-meter {
+        max-width: 320px;
+    }
+    .wc-header {
+        height: 200px;
+    }
+    .wc-header {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .wc-close-chat {
+        height: 22px;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 650px) {
+    .wc-credit-meter {
+        max-width: 320px;
+    }
+    .wc-header {
+        height: 220px;
+    }
+    .wc-header {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .wc-close-chat {
+        height: 22px;
+    }
+}
+
+@media (min-width: 651px) {
+    .wc-credit-meter {
+        max-width: 320px;
+    }
+    .wc-header {
+        height: 220px;
+    }
+    .wc-header {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .wc-close-chat {
+        height: 22px;
+    }
+}
 
     .wc-time {
         color: $c_textLight;
@@ -623,6 +718,9 @@
         }
 
         input[type=text],
+        input[type=email],
+        input[type=number],
+        input[type=tel],
         textarea {
             border: none;
             height: 100%;
@@ -630,6 +728,48 @@
             padding: 0;
             resize: none;
             width: 100%;
+        }
+
+        ::-webkit-datetime-edit {
+            padding: 1em;
+        }
+
+        ::-webkit-datetime-edit-fields-wrapper {
+            background: silver;
+        }
+
+        ::-webkit-datetime-edit-text {
+            color: red;
+            padding: 0 0.3em;
+        }
+
+        ::-webkit-datetime-edit-month-field {
+            color: blue;
+        }
+
+        ::-webkit-datetime-edit-day-field {
+            color: green;
+        }
+
+        ::-webkit-datetime-edit-year-field {
+            color: purple;
+        }
+
+        ::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        ::-webkit-calendar-picker-indicator {
+            background: orange;
+        }
+
+        input[type=date] {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0;
+            outline: none;
+            resize: none;
         }
 
         &.has-text .wc-send svg {

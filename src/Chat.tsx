@@ -263,8 +263,9 @@ export class Chat extends React.Component<ChatProps, {}> {
         let header: JSX.Element;
         header =
             <div className="wc-header">
+            <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-svg.svg" onClick={() => window.parent.postMessage('close-bot', '*')} />
+            <img className="wc-credit-meter" src="https://fbbotservicea5c1.blob.core.windows.net/bots/credit-meter.png" />
                 <p className="wc-header-span">Your Free Credit Report worth Rs.1200<br/><strong>Instant and Absolutely FREE!</strong></p>
-                <img className="wc-close-chat" src="https://fbbotservicea5c1.blob.core.windows.net/bots/close-svg.svg" onClick={() => window.parent.postMessage('close-bot', '*')}/>
             </div>;
 
         return (
